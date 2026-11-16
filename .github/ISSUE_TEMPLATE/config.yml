@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
   - name: 安全报告
-    url: https://github.com/OWNER/REPO/security/advisories/new
-    about: 请勿公开报告凭证泄露或其他安全问题（发布前替换为实际仓库地址）。
+    url: https://github.com/tryson659/github-hot-browser/security/advisories/new
+    about: 请勿公开报告凭证泄露或其他安全问题。
