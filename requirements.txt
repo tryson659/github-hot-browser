@@ -1,0 +1,3 @@
+# 运行时依赖（Windows 桌面）
+# 允许的版本区间；精确锁定见 CONTRIBUTING 的「依赖锁定」流程
+PySide6>=6.6,<7

@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    env:
+      QT_QPA_PLATFORM: offscreen
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+      - name: Syntax check (AST)
+        run: |
+          python -c "import ast,pathlib,sys; [ast.parse(p.read_text(encoding='utf-8')) for p in list(pathlib.Path('app').rglob('*.py'))+list(pathlib.Path('tests').rglob('*.py'))]; print('AST OK')"
+      - name: Run tests
+        run: python -m pytest -q
