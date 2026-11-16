@@ -164,7 +164,7 @@ class TestCards:
             R("o/nodesc", desc=""),
             R("o/arch", archived=True),
             R("o/rank", growth_7d=None, growth_value=233, growth_window="周"),
-            R("o/interest", interest_tags=["游戏引擎"], topics=["game", "cpp"]),
+            R("o/interest", interest_tags=["示例方向"], topics=["game", "cpp"]),
         ]
         win.db.save_cache(config.HOT_KEY, 7, repos, "")
         win.db.add_favorite(repos[1])

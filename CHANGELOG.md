@@ -51,6 +51,8 @@
   明确标注为交集/单选。
 - 标签下拉合并 `repo_topics` 缓存并回填卡片 topics，补齐后标签可筛选；
   新增 `docs/filters.md`。
+- 移除项目介绍中的个人方向措辞；默认兴趣方向改为空，不再内置个人方向
+  预设，兴趣完全由用户自定义。
 - 使用用户 Token 真实复验：Star History 203 个完整日（最近 7 天 193）、
   OpenGithubs 周榜 20/月榜 30、GitHub Search total=3136；当前日/未来日已跳过。
 

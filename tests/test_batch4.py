@@ -155,14 +155,14 @@ class TestInterestsSettings:
         assert interests == {"图形": ["vulkan", "metal"],
                              "服务端": ["grpc", "asio"]}
 
-    def test_empty_restores_builtin(self, db):
+    def test_empty_clears_interests(self, db):
         from PySide6.QtWidgets import QApplication
         app = QApplication.instance() or QApplication([])
         from app.ui.dialogs import SettingsDialog
         dlg = SettingsDialog(db)
         dlg.interests_edit.setPlainText("")
         dlg._save()
-        assert db.get_setting("interests") == config.INTEREST_KEYWORDS
+        assert db.get_setting("interests") == {}
 
     def test_intervals_saved(self, db):
         from PySide6.QtWidgets import QApplication

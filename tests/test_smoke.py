@@ -96,8 +96,10 @@ class TestClassify:
         assert classify_domain("y", "nothing special") == "其他"
 
     def test_interest(self):
-        tags, hits = match_interest("my-vulkan-engine", "render engine")
-        assert "游戏引擎" in tags and hits >= 2
+        tags, hits = match_interest(
+            "my-vulkan-engine", "render engine",
+            {"示例方向": ["vulkan", "render"]})
+        assert "示例方向" in tags and hits >= 2
         assert match_interest("plain", "nothing")[1] == 0
 
 

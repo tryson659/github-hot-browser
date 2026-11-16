@@ -45,8 +45,8 @@ win = MainWindow(db, start_sync=False)
 # ---- 准备数据：热门池 + 语言/领域通道缓存 ----
 repos = [mk("a/alpha", 500, "Python", "web framework demo", "Web / 前端",
             ["web", "framework"]),
-         mk("b/beta", 300, "C++", "game engine demo", "游戏 / 模拟器",
-            ["game", "engine"]),
+         mk("b/beta", 300, "C++", "sample compiler demo", "开发工具",
+            ["compiler", "toolchain"]),
          mk("c/gamma", 200, "Rust", "cli tool demo", "开发工具", ["cli"])]
 ch = win._hot_channel()
 db.save_cache(ch, 7, repos, "测试榜")

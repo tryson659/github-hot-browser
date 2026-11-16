@@ -152,18 +152,8 @@ DOMAIN_QUERY_KWS = {
     "数据 / 效率": "data",
 }
 
-INTEREST_KEYWORDS = {
-    "游戏引擎": ["engine", "vulkan", "opengl", "directx", "metal", "render", "shader",
-               "game", "ecs", "physics", "unity", "unreal", "gamedev", "graphics",
-               "sprite", "粒子", "animation system", "scene", "帧率"],
-    "C++服务端": ["server", "rpc", "grpc", "http server", "socket", "network",
-                "microservice", "redis", "mysql", "rpc framework", "高并发",
-                "coroutine", "asio", "muduo", "skynet", "gateway", "proxy server",
-                "分布式", "cluster"],
-    "底层技术": ["memory", "allocator", "malloc", "compile", "linker", "stl",
-              "template", "constexpr", "simd", "kernel", "driver", "runtime",
-              "ffi", "assembly", "cache", "atomic", "lock-free", "context switch"],
-}
+# 兴趣匹配方向完全由用户自定义；默认不预设任何个人方向。
+INTEREST_KEYWORDS: dict[str, list[str]] = {}
 
 # ---------------- 默认设置 ----------------
 DEFAULT_SETTINGS = {

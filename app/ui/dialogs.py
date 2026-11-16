@@ -160,7 +160,7 @@ class SettingsDialog(QDialog):
             "\n".join(f"{k}: {', '.join(v)}" for k, v in interests.items()))
         self.interests_edit.setMaximumHeight(110)
         self.interests_edit.setPlaceholderText(
-            "游戏引擎: engine, vulkan, render\nC++服务端: server, grpc, asio")
+            "我的方向: keyword1, keyword2\n另一方向: keyword3, keyword4")
         il.addWidget(self.interests_edit)
         hint = QLabel("提示：项目简介多为英文，英文关键词命中率更高")
         hint.setObjectName("sectionLabel")
